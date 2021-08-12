@@ -30,13 +30,13 @@ server.get('/api/users', (req, res) => {
   res.status(200).json([
     {
       id: 1,
-      name: 'John Doe',
-      email: "john@email.com"
+      username: 'John Doe',
+      password: process.env.PW1
     },
     {
       id: 2,
-      name: 'Jane Doe',
-      email: "jane@email.com"
+      username: 'Jane Doe',
+      password: process.env.PW2
     }
   ]);
 });
@@ -62,3 +62,5 @@ server.post('/api/login', (req, res) => {
     });
   }
 });
+console.log(process.env.PORT);
+console.log(__dirname);
