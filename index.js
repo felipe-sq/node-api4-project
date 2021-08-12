@@ -3,9 +3,19 @@ const express = require('express');
 const cors = require('cors');
 const server = express();
 const port = process.env.PORT || 9000;
+const path = require('path');
 
 server.use(cors());
 server.use(express.json());
+server.use(express.static(path.join(__dirname, 'client/build')));
+
+server.use("/api/*", (_, res) => {
+  res.json({data: "The API is working"});
+});
+
+server.use("*", (_, res) => {
+  res.sendFile(path.join(__dirname, 'client/build/index.html'));
+});
 
 server.listen(port, () => {
   console.log(`Server listening on port ${port}`);
