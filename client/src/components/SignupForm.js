@@ -25,7 +25,7 @@ class Signup extends React.Component {
       .then(res => {
         console.log(res);
         alert("You have successfully signed up!");
-        this.props.history.push("/home");
+        // this.props.history.push("/home");
       }).catch(err => {
         console.log(err);
         alert("You have not signed up!");
