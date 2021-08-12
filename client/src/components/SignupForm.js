@@ -18,7 +18,7 @@ class Signup extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     if (this.state.username && this.state.password) {
-      axios.post('http://localhost:5500/api/signup', {
+      axios.post('http://localhost:5500/api/register', {
         username: this.state.username,
         password: this.state.password,
       })
